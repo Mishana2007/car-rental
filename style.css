@@ -422,12 +422,12 @@ section{padding:60px 20px;}
 
 
 /* Скрыть кнопку "Показать ещё" и "Свернуть" на мобильных */
-@media (max-width: 900px) {
+/* @media (max-width: 900px) {
     .show-more,
     .show-less {
         display: none !important;
     }
-}
+} */
 
 
 
