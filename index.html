@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Car Rent</title>
+
+    <!-- Шрифты -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ▬▬▬ МЕНЮ ▬▬▬ -->
+<header class="navbar">
+    <div class="logo">CarRent</div>
+
+    <nav class="nav-center">
+        <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#fleet">Автопарк</a></li>
+            <li><a href="#">Условия</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <a href="#" class="btn-book">Бронь</a>
+
+    <div class="burger" id="burger">&#9776;</div>
+</header>
+
+<!-- Мобильное меню -->
+<div class="mobile-menu" id="mobileMenu">
+    <div class="close-btn" id="closeMenu">×</div>
+    <a href="#">Главная</a>
+    <a href="#fleet">Автопарк</a>
+    <a href="#">Условия</a>
+    <a href="#">Контакты</a>
+    <a href="#" class="book-mobile">Бронь</a>
+</div>
+
+<!-- ▬▬▬ HERO c 3D ▬▬▬ -->
+<section class="hero">
+    <div class="hero-text">
+        <h1>Премиальная аренда автомобилей<br>в Москве</h1>
+        <p>Для тех, кто выбирает скорость, статус и свободу.</p>
+        <a href="#" class="cta">Подобрать автомобиль</a>
+    </div>
+
+    <canvas id="renderCanvas"></canvas>
+</section>
+
+<!-- ▬▬▬ БАННЕР ▬▬▬ -->
+<section class="banner">
+    <p>Время — самый дорогой ресурс.<br>Выбирай автомобиль, который подчёркивает твой темп.</p>
+</section>
+
+<!-- ▬▬▬ АВТОПАРК ▬▬▬ -->
+<section id="fleet" class="fleet-section">
+    <h2>Наш автопарк</h2>
+
+    <div class="filters">
+        <button class="filter-btn active" data-filter="all">Все</button>
+        <button class="filter-btn" data-filter="business">Бизнес</button>
+        <button class="filter-btn" data-filter="sport">Спорт</button>
+        <button class="filter-btn" data-filter="premium">Премиум</button>
+        <button class="filter-btn" data-filter="luxury">Люкс</button>
+    </div>
+
+    <div class="cars-grid" id="carsGrid">
+
+        <div class="car-card" data-category="sport">
+            <div class="car-img">
+                <img src="img/bmw1.jpg" alt="BMW 430i">
+            </div>
+            <h3>BMW 430i (2018)</h3>
+            <p>Спорт • от 12 000₽ / сутки</p>
+            <a href="bmw430i.html" class="car-details-btn">Подробнее</a>
+        </div>
+
+        <div class="car-card" data-category="sport">
+            <div class="car-img">
+                <img src="img/FordMustang2019.jpg" alt="Mustang">
+            </div>
+            <h3>Ford Mustang (2019)</h3>
+            <p>Спорт • от 13 000₽ / сутки</p>
+            <a href="mustang.html" class="car-details-btn">Подробнее</a>
+        </div>
+
+        <div class="car-card" data-category="business">
+            <div class="car-img">
+                <img src="img/hyundai1.jpg" alt="Hyundai Creta">
+            </div>
+            <h3>Hyundai Creta (2 шт)</h3>
+            <p>Бизнес • от 7 000₽ / сутки</p>
+            <a href="creta.html" class="car-details-btn">Подробнее</a>
+        </div>
+
+        <div class="car-card" data-category="luxury">
+            <div class="car-img">
+                <img src="img/alphard1.jpg" alt="Alphard">
+            </div>
+            <h3>Toyota Alphard (2020)</h3>
+            <p>Люкс • от 15 000₽ / сутки</p>
+            <a href="alphard.html" class="car-details-btn">Подробнее</a>
+        </div>
+
+        <div class="car-card" data-category="luxury">
+            <div class="car-img">
+                <img src="img/lc1.jpg" alt="Lexus LC">
+            </div>
+            <h3>Lexus LC (2025)</h3>
+            <p>Люкс • от 25 000₽ / сутки</p>
+            <a href="lexuslc.html" class="car-details-btn">Подробнее</a>
+        </div>
+
+        <div class="car-card" data-category="sport">
+            <div class="car-img">
+                <img src="img/panamera1.jpg" alt="Panamera">
+            </div>
+            <h3>Porsche Panamera (2015)</h3>
+            <p>Спорт • от 14 000₽ / сутки</p>
+            <a href="panamera.html" class="car-details-btn">Подробнее</a>
+        </div>
+
+        <div class="car-card" data-category="sport">
+            <div class="car-img">
+                <img src="img/camaro1.jpg" alt="Camaro">
+            </div>
+            <h3>Chevrolet Camaro (2020)</h3>
+            <p>Спорт • от 16 000₽ / сутки</p>
+            <a href="camaro.html" class="car-details-btn">Подробнее</a>
+        </div>
+
+        <div class="car-card" data-category="premium">
+            <div class="car-img">
+                <img src="img/s222_1.jpg" alt="Mercedes S222">
+            </div>
+            <h3>Mercedes S 222</h3>
+            <p>Премиум • от 18 000₽ / сутки</p>
+            <a href="s222.html" class="car-details-btn">Подробнее</a>
+        </div>
+
+    </div>
+
+    <button id="showMoreBtn" class="show-more">Показать ещё</button>
+    <!-- <button id="showLessBtn" class="show-less hidden">Свернуть</button> -->
+</section>
+
+
+
+<section id="benefits" class="benefits-section fade-group">
+
+    <h2 class="benefits-title fade-up">Преимущества нашего сервиса</h2>
+
+    <div class="benefits-grid">
+
+        <!-- CARD 1 -->
+        <div class="benefit-card fade-up">
+            <div class="benefit-icon">
+                <!-- star.svg -->
+                <svg width="60" height="60" fill="#D4A373" viewBox="0 0 24 24">
+                    <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.843 
+                    1.48 8.274L12 18.896l-7.416 4.527 
+                    1.48-8.274L0 9.306l8.332-1.151z"/>
+                </svg>
+            </div>
+            <h3>Только свежие автомобили</h3>
+            <p>Каждый автомобиль проходит диагностику перед выдачей.</p>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="benefit-card fade-up">
+            <div class="benefit-icon">
+                <!-- clock.svg -->
+                <svg width="60" height="60" fill="#D4A373" viewBox="0 0 24 24">
+                    <path d="M12 1a11 11 0 1 0 11 11A11.012 11.012 0 0 0 12 1zm1 11.59V6h-2v7h.01L13 16z"/>
+                </svg>
+            </div>
+            <h3>Подача от 20 минут</h3>
+            <p>Доставляем автомобиль быстро в любую точку Москвы.</p>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="benefit-card fade-up">
+            <div class="benefit-icon">
+                <!-- id.svg -->
+                <svg width="60" height="60" fill="#D4A373" viewBox="0 0 24 24">
+                    <path d="M20 3H4a2 2 0 0 0-2 2v14a2 
+                    2 0 0 0 2 2h16a2 2 0 0 0 
+                    2-2V5a2 2 0 0 0-2-2zM6 7h4v2H6zm8 
+                    10H6v-1a4 4 0 0 1 8 0zm4-3h-5v-2h5zm0-4h-5V8h5z"/>
+                </svg>
+            </div>
+            <h3>Минимум документов</h3>
+            <p>Паспорт и права — оформление за 3 минуты.</p>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="benefit-card fade-up">
+            <div class="benefit-icon">
+                <!-- payment.svg -->
+                <svg width="60" height="60" fill="#D4A373" viewBox="0 0 24 24">
+                    <path d="M22 4H2a2 2 0 0 0-2 
+                    2v12a2 2 0 0 0 2 2h20a2 
+                    2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 
+                    4H2V6h20z"/>
+                </svg>
+            </div>
+            <h3>Удобная оплата</h3>
+            <p>Поддерживаем карты, онлайн-оплату и переводы.</p>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="benefit-card fade-up">
+            <div class="benefit-icon">
+                <!-- inspection.svg -->
+                <svg width="60" height="60" fill="#D4A373" viewBox="0 0 24 24">
+                    <path d="M21 7l-8.293 8.293-4.293-4.293-1.414 
+                    1.414 5.707 5.707L22.414 8.414z"/>
+                </svg>
+            </div>
+            <h3>Честный осмотр</h3>
+            <p>Фиксация состояния автомобиля при получении и возврате.</p>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="benefit-card fade-up">
+            <div class="benefit-icon">
+                <!-- shield.svg -->
+                <svg width="60" height="60" fill="#D4A373" viewBox="0 0 24 24">
+                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 
+                    9 12 5.16-1.26 9-6.45 9-12V5z"/>
+                </svg>
+            </div>
+            <h3>Полное КАСКО</h3>
+            <p>Страховка премиум-класса для вашего спокойствия.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section id="steps" class="section fade-group">
+    <h2 class="section-title fade-up">Как проходит аренда</h2>
+
+    <div class="steps-line">
+
+        <div class="step fade-up">
+            <div class="num">1</div>
+            <h4>Выбор автомобиля</h4>
+            <p>Вы подбираете машину под задачу — спорт, бизнес или премиум.</p>
+        </div>
+
+        <div class="arrow fade-up">→</div>
+
+        <div class="step fade-up">
+            <div class="num">2</div>
+            <h4>Документы</h4>
+            <p>Отправляете фото паспорта и водительского удостоверения.</p>
+        </div>
+
+        <div class="arrow fade-up">→</div>
+
+        <div class="step fade-up">
+            <div class="num">3</div>
+            <h4>Договор</h4>
+            <p>Подписываете электронный договор — 2 минуты.</p>
+        </div>
+
+        <div class="arrow fade-up">→</div>
+
+        <div class="step fade-up">
+            <div class="num">4</div>
+            <h4>Подача авто</h4>
+            <p>Мы доставим автомобиль в удобное вам место.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<section id="guarantee" class="section fade-group">
+    <h2 class="section-title fade-up">Гарантии и безопасность</h2>
+
+    <div class="guarantee-flex">
+
+        <div class="guarantee fade-up">
+            <h3>Прозрачные условия</h3>
+            <p>Все условия фиксируются заранее — вы видите каждый пункт договора.</p>
+        </div>
+
+        <div class="guarantee fade-up">
+            <h3>Техническая проверка</h3>
+            <p>Каждый автомобиль проходит ТО и диагностику перед выдачей.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="geo" class="section fade-group">
+    <h2 class="section-title fade-up">География подачи</h2>
+
+    <div class="geo-layout">
+
+        <div class="geo-text fade-up">
+            <p>Мы подаём автомобили <span class="highlight">только в аэропорты Москвы</span>:</p>
+
+            <ul class="geo-icons">
+                <li>✈️ Шереметьево</li>
+                <li>✈️ Домодедово</li>
+                <li>✈️ Внуково</li>
+                <li>✈️ Жуковский</li>
+            </ul>
+
+            <br>
+
+            <p>Получение автомобиля возможно только на нашей площадке:</p>
+            <p class="highlight">г. Москва, Пресненская набережная 12 (пример)</p>
+            <p>Точный адрес сможем заменить позже.</p>
+        </div>
+
+        <div class="geo-map fade-up">
+
+            <!-- Яндекс Карта -->
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A5e2d838a62adcd1efb6ef9982f42f6e3d5ed4686084f60a92b5ff31a20359fb1&amp;source=constructor" 
+                width="100%" height="100%" frameborder="0">
+            </iframe>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+<section id="reviews" class="section fade-group">
+    <h2 class="section-title fade-up">Отзывы клиентов</h2>
+
+    <div class="reviews-grid">
+        <div class="review fade-up">
+            <p class="text">«Арендовал Mustang на выходные — эмоций море. Машина в идеале!»</p>
+            <div class="author">Алексей, Москва</div>
+        </div>
+
+        <div class="review fade-up">
+            <p class="text">«Очень быстро оформили, подача в аэропорт — супер удобно.»</p>
+            <div class="author">Роман, Санкт-Петербург</div>
+        </div>
+
+        <div class="review fade-up">
+            <p class="text">«Брал BMW 430i. Машина чистая, обслуженная. Рекомендую!»</p>
+            <div class="author">Даниил, Москва</div>
+        </div>
+    </div>
+</section>
+
+
+<section id="contact" class="section fade-group form-section">
+
+    <h2 class="section-title fade-up">Заказать консультацию</h2>
+
+    <div class="form-container fade-up">
+
+        <form id="consultForm">
+
+            <label>ФИО полностью</label>
+            <input type="text" name="fullname" placeholder="Введите ФИО" required>
+
+            <label>Номер телефона</label>
+            <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required>
+
+            <label>Где с вами связаться?</label>
+            <div class="social-select">
+                <button type="button" class="social-option" data-social="tg">Telegram</button>
+                <button type="button" class="social-option" data-social="wa">WhatsApp</button>
+                <button type="button" class="social-option" data-social="vk">VK</button>
+            </div>
+
+            <div id="socialInputBlock" class="hidden fade-up">
+                <label id="socialLabel">Ваш профиль</label>
+                <input type="text" id="socialInput" placeholder="">
+            </div>
+
+            <div class="checkbox">
+                <input type="checkbox" id="age" required>
+                <label for="age">Мне уже есть 18 лет</label>
+            </div>
+
+            <div class="checkbox">
+                <input type="checkbox" id="policy" required>
+                <label for="policy">Согласен с политикой конфиденциальности</label>
+            </div>
+
+            <button type="submit" class="submit-btn">Отправить заявку</button>
+        </form>
+
+        <div class="contact-info fade-up">
+            <h3>Контакты</h3>
+            <p>Телефон: <a href="tel:+79991231212">+7 999 123-12-12</a></p>
+            <p>Telegram: <a href="#">@car_rent</a></p>
+            <p>WhatsApp: <a href="#">Перейти в чат</a></p>
+            <p>Email: rent@company.ru</p>
+            <p class="address">Пункт выдачи: Москва, Пресненская наб., 12</p>
+            <p>График: 9:00 — 22:00</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="faq" class="section fade-group">
+    <h2 class="section-title fade-up">FAQ — Частые вопросы</h2>
+
+    <div class="faq-container">
+
+        <div class="faq-item fade-up">
+            <button class="faq-question">Какие документы нужны?</button>
+            <div class="faq-answer">
+                Паспорт и водительское удостоверение.
+            </div>
+        </div>
+
+        <div class="faq-item fade-up">
+            <button class="faq-question">Какой залог?</button>
+            <div class="faq-answer">
+                Размер залога зависит от выбранного автомобиля.
+            </div>
+        </div>
+
+        <div class="faq-item fade-up">
+            <button class="faq-question">Куда вы подаёте автомобиль?</button>
+            <div class="faq-answer">
+                Только аэропорты Москвы. Забрать автомобиль можно на нашей площадке.
+            </div>
+        </div>
+
+        <div class="faq-item fade-up">
+            <button class="faq-question">Можно ли продлить аренду?</button>
+            <div class="faq-answer">
+                Да, продление возможно — напишите менеджеру.
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer class="footer fade-group">
+
+    <div class="footer-top fade-up">
+        <div class="footer-col">
+            <h3 class="footer-title">Автопарк</h3>
+            <ul>
+                <li><a href="#">Премиум</a></li>
+                <li><a href="#">Спорт</a></li>
+                <li><a href="#">Бизнес</a></li>
+                <li><a href="#">SUV</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3 class="footer-title">Сервис</h3>
+            <ul>
+                <li><a href="#">Как проходит аренда</a></li>
+                <li><a href="#">Подача в аэропорт</a></li>
+                <li><a href="#">Условия аренды</a></li>
+                <li><a href="#">Гарантии и безопасность</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3 class="footer-title">Контакты</h3>
+            <ul>
+                <li><a href="tel:+79991231212">+7 999 123-12-12</a></li>
+                <li><a href="#">Telegram</a></li>
+                <li><a href="#">WhatsApp</a></li>
+                <li><a href="mailto:rent@company.ru">rent@company.ru</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3 class="footer-title">Адрес</h3>
+            <p class="footer-text">Пункт выдачи:</p>
+            <p class="footer-text">Москва, Пресненская наб., 12</p>
+
+            <div class="footer-social">
+                <a class="soc" href="#"><img src="icons/tg.svg"></a>
+                <a class="soc" href="#"><img src="icons/wa.svg"></a>
+                <a class="soc" href="#"><img src="icons/vk.svg"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-map fade-up">
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A5e2d838a62adcd1efb6ef9982f42f6e3d5ed4686084f60a92b5ff31a20359fb1&amp;source=constructor"
+                frameborder="0"></iframe>
+    </div>
+
+    <div class="footer-bottom fade-up">
+        <p>© 2025 Luxury Car Rent. Все права защищены.</p>
+        <a href="#">Политика конфиденциальности</a>
+    </div>
+
+</footer>
+
+
+
+
+<!-- BabylonJS -->
+<script src="https://cdn.babylonjs.com/babylon.js"></script>
+<script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+
+<script src="script.js"></script>
+<script src="carousel.js"></script>
+<script src="filter.js"></script>
+<script src="show-more.js"></script>
+<script src="faq.js"></script>
+<script src="contact-form.js"></script>
+
+
+
+
+<script>
+document.getElementById("burger").onclick = () =>
+    document.getElementById("mobileMenu").classList.add("open");
+
+document.getElementById("closeMenu").onclick = () =>
+    document.getElementById("mobileMenu").classList.remove("open");
+</script>
+
+
+
+</body>
+</html>
