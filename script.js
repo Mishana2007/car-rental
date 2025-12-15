@@ -72,3 +72,44 @@ window.addEventListener("scroll", () => {
 // РЕНДЕР
 engine.runRenderLoop(() => scene.render());
 window.addEventListener("resize", () => engine.resize());
+
+
+
+/* ============================================================
+   МОБИЛЬНОЕ ОТОБРАЖЕНИЕ АВТОПАРКА — УПРОЩЁННАЯ ВЕРСИЯ
+============================================================ */
+
+const allCars = document.querySelectorAll(".car-card");
+const showMoreBtn = document.getElementById("showMoreBtn");
+
+function setupMobileFleet() {
+    if (window.innerWidth > 900) {
+        // ПК — показываем всё и скрываем кнопку
+        allCars.forEach(card => card.classList.remove("hidden-mobile"));
+        showMoreBtn.classList.add("hidden");
+        return;
+    }
+
+    // Телефон → показываем первые 4
+    allCars.forEach((card, index) => {
+        if (index > 3) {
+            card.classList.add("hidden-mobile");
+        }
+    });
+
+    showMoreBtn.classList.remove("hidden");
+}
+
+setupMobileFleet();
+window.addEventListener("resize", setupMobileFleet);
+
+
+/* === ПОКАЗАТЬ ЕЩЁ (мобильная версия) === */
+showMoreBtn.addEventListener("click", () => {
+    allCars.forEach(card => card.classList.remove("hidden-mobile"));
+
+    // скрываем кнопку после раскрытия
+    showMoreBtn.classList.add("hidden");
+
+    // ❗ НЕ ДЕЛАЕМ НИКАКОГО SCROLL-TO
+});

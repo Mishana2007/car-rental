@@ -14,31 +14,36 @@
 
 <!-- ▬▬▬ МЕНЮ ▬▬▬ -->
 <header class="navbar">
-    <div class="logo">CarRent</div>
+    <div class="logo">Dava Rent Car</div>
 
     <nav class="nav-center">
         <ul>
-            <li><a href="#">Главная</a></li>
+            <li><a href="#hero">Главная</a></li>
             <li><a href="#fleet">Автопарк</a></li>
-            <li><a href="#">Условия</a></li>
-            <li><a href="#">Контакты</a></li>
+            <li><a href="#conditions">Условия</a></li>
+            <li><a href="#contact">Контакты</a></li>
         </ul>
     </nav>
 
-    <a href="#" class="btn-book">Бронь</a>
+    <a href="#contact" class="btn-book">Бронь</a>
 
     <div class="burger" id="burger">&#9776;</div>
 </header>
 
 <!-- Мобильное меню -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
 <div class="mobile-menu" id="mobileMenu">
     <div class="close-btn" id="closeMenu">×</div>
-    <a href="#">Главная</a>
+
+    <a href="#hero">Главная</a>
     <a href="#fleet">Автопарк</a>
-    <a href="#">Условия</a>
-    <a href="#">Контакты</a>
-    <a href="#" class="book-mobile">Бронь</a>
+    <a href="#conditions">Условия</a>
+    <a href="#contact">Контакты</a>
+
+    <a href="#contact" class="book-mobile">Бронь</a>
 </div>
+
 
 <!-- ▬▬▬ HERO c 3D ▬▬▬ -->
 <section class="hero">
@@ -144,8 +149,9 @@
 
     </div>
 
-    <button id="showMoreBtn" class="show-more">Показать ещё</button>
-    <!-- <button id="showLessBtn" class="show-less hidden">Свернуть</button> -->
+    <button id="showMoreBtn" class="fleet-btn show-more">Показать ещё</button>
+<button id="showLessBtn" class="fleet-btn show-less hidden">Скрыть</button>
+
 </section>
 
 
@@ -526,6 +532,9 @@
 <script src="show-more.js"></script>
 <script src="faq.js"></script>
 <script src="contact-form.js"></script>
+<script src="mobile-menu.js"></script>
+
+
 
 
 

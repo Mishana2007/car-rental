@@ -422,11 +422,435 @@ section{padding:60px 20px;}
 
 
 /* Скрыть кнопку "Показать ещё" и "Свернуть" на мобильных */
-@media (max-width: 900px) {
+/* @media (max-width: 900px) {
     .show-more,
     .show-less {
         display: none !important;
     }
+} */
+
+
+
+/* ============================================
+   КНОПКИ ДЛЯ МОБИЛЬНОГО АВТОПАРКА
+============================================ */
+.fleet-btn {
+    width: 100%;
+    padding: 14px 0;
+    text-align: center;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(90deg, #D4A373, #b88b5c);
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: .3s;
+    display: none; /* скрыто по умолчанию */
+}
+
+.fleet-btn:active {
+    transform: scale(0.97);
+}
+
+.show-less {
+    background: #222;
+    color: #D4A373;
+    border: 1px solid #D4A373;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ПК ВЕРСИЯ — кнопки не показываем */
+@media (min-width: 901px) {
+    .fleet-btn {
+        display: none !important;
+    }
+}
+
+/* МОБИЛЬНАЯ ВЕРСИЯ — кнопка показывается */
+@media (max-width: 900px) {
+    #showMoreBtn {
+        display: block;
+    }
+}
+
+/* Мобильная версия — карточки по одной */
+@media (max-width: 900px) {
+    .cars-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .car-card.hidden-mobile {
+        display: none;
+    }
+}
+
+.hidden-mobile { display: none; }
+
+.hidden { display: none !important; }
+
+
+#guarantee {
+    padding-top: 100px;      /* поднимаем блок выше */
+    text-align: center;      /* центрируем заголовок */
+}
+
+
+#guarantee .section-title {
+    font-size: 34px;    /* было 42px → сделали премиальный размер */
+    margin-bottom: 30px;
+}
+
+
+
+@media (max-width: 900px) {
+    #guarantee .section-title {
+        font-size: 24px;    /* было 30px → мягче, компактнее */
+        margin-bottom: 24px;
+    }
+
+
+
+    #guarantee .section-title {
+        font-size: 30px;
+        margin-bottom: 30px;
+        line-height: 1.2;
+    }
+}
+
+
+
+
+
+#geo {
+    padding-top: 100px; /* поднимаем весь блок */
+    text-align: center; /* центрируем заголовок */
+}
+
+
+#geo .section-title {
+    font-size: 38px;        /* было меньше — теперь премиум размер */
+    line-height: 1.2;
+    margin-bottom: 45px;    /* больше воздуха под заголовком */
+    text-align: center;
+}
+
+
+@media (max-width: 900px) {
+    #geo {
+        padding-top: 70px; /* комфортный отступ вверх */
+    }
+
+    #geo .section-title {
+        font-size: 28px;   /* мягче, не огромный */
+        margin-bottom: 30px;
+        text-align: center;
+    }
+}
+
+
+
+#reviews {
+    padding-top: 90px;   /* поднимаем блок выше */
+}
+
+#reviews .section-title {
+    text-align: left;    /* ставим слева */
+    margin-bottom: 40px;
+}
+
+
+#reviews .section-title {
+    font-size: 38px;   /* было меньше — теперь красивый премиум */
+    line-height: 1.25;
+}
+
+
+
+@media (max-width: 900px) {
+    #reviews {
+        padding-top: 70px;
+    }
+
+    #reviews .section-title {
+        font-size: 26px;     /* мягкий размер для маленьких экранов */
+        margin-bottom: 28px;
+        text-align: left;
+    }
+}
+
+
+#contact {
+    padding-top: 90px; /* можешь поставить 100px, если хочешь ещё выше */
+}
+
+#contact .section-title {
+    text-align: left;
+    font-size: 38px;     /* красивый премиальный размер */
+    line-height: 1.25;
+    margin-bottom: 40px;
+}
+
+
+@media (max-width: 900px) {
+    #contact {
+        padding-top: 70px;
+    }
+
+    #contact .section-title {
+        font-size: 28px;   /* аккуратный размер */
+        margin-bottom: 30px;
+        text-align: left;
+    }
+}
+
+
+
+#faq {
+    padding-top: 110px; /* можешь уменьшить до 90px если покажется высоко */
+    text-align: center;
+}
+
+
+#faq .section-title {
+    font-size: 40px;     /* премиальный размер */
+    line-height: 1.25;
+    margin-bottom: 50px; /* больше воздуха */
+    text-align: center;
+}
+
+
+@media (max-width: 900px) {
+    #faq {
+        padding-top: 80px;
+    }
+
+    #faq .section-title {
+        font-size: 28px;  /* аккуратный красивый размер */
+        margin-bottom: 35px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* ============================
+      NAVIGATION — PREMIUM
+============================ */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 22px 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(10,10,10,0.45);
+    backdrop-filter: blur(12px);
+    z-index: 100;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* LOGO */
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #D4A373;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+}
+
+
+/* CENTER MENU (ПК) */
+.nav-center ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.nav-center ul li a {
+    color: #ffffffd0;
+    text-decoration: none;
+    font-size: 18px;
+    transition: .3s;
+}
+
+.nav-center ul li a:hover {
+    color: #D4A373;
+}
+
+
+/* BOOK BUTTON (ПК) */
+.btn-book {
+    padding: 10px 22px;
+    background: #D4A373;
+    color: #000;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-book:hover {
+    background: #b88b5c;
+}
+
+
+/* BURGER (моб.) */
+.burger {
+    display: none;
+    font-size: 34px;
+    cursor: pointer;
+    color: #FFF;
+}
+
+
+/* ========== MOBILE MENU ========== */
+
+.mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10,10,10,0.6);
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+    z-index: 99;
+}
+
+.mobile-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background: #111;
+    width: 75%;
+    height: 100vh;
+    padding: 40px 30px;
+    transition: .4s ease;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.mobile-menu.open {
+    right: 0;
+}
+
+.mobile-menu a {
+    color: #FFF;
+    text-decoration: none;
+    font-size: 28px;
+    font-family: 'Playfair Display';
+    transition: .3s;
+}
+
+.mobile-menu a:hover {
+    color: #D4A373;
+}
+
+.close-btn {
+    font-size: 42px;
+    align-self: flex-end;
+    margin-bottom: 20px;
+    cursor: pointer;
+    color: #FFF;
+}
+
+.book-mobile {
+    margin-top: 20px;
+    background: #D4A373;
+    color: #000 !important;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* PHONE LAYOUT */
+@media (max-width: 900px) {
+    .nav-center,
+    .btn-book {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .navbar {
+        padding: 16px 25px;
+    }
+
+    .logo {
+        font-size: 26px;
+    }
+}
+
+
+/* MOBILE MENU — PREMIUM LINK STYLE */
+.mobile-menu a {
+    text-decoration: none;          /* убираем подчёркивание */
+    color: #fff;                    /* чистый белый */
+    font-size: 26px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: 0.3s;
+}
+
+/* последний пункт без линии */
+.mobile-menu a:last-child {
+    border-bottom: none;
+}
+
+/* HOVER EFFECT */
+.mobile-menu a:hover {
+    color: #D4A373;                 /* золото */
+    padding-left: 8px;              /* лёгкий сдвиг — премиальный эффект */
+    border-bottom-color: #D4A373;   /* золотая линия */
+}
+
+/* BUTTON "Бронь" — должны выглядеть как кнопка */
+.book-mobile {
+    background: #D4A373;
+    color: #000 !important;
+    font-size: 22px !important;
+    padding: 14px 20px;
+    border-radius: 10px;
+    margin-top: 25px;
+    border: none !important;
+    text-align: center;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.book-mobile:hover {
+    background: #b88b5c;
+    padding-left: 20px;
 }
 
 
