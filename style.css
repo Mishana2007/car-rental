@@ -961,3 +961,31 @@ section{padding:60px 20px;}
     }
 }
 
+
+
+.footer-social{
+  display: flex;
+  gap: 12px;
+}
+
+.footer-social .soc{
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: #fff;
+  background: rgba(255,255,255,.08);
+  transition: transform .2s ease, background .2s ease;
+  text-decoration: none;
+}
+
+.footer-social .soc i{
+  font-size: 20px;
+  line-height: 1;
+}
+
+.footer-social .soc:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.14);
+}
